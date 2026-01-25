@@ -17,7 +17,7 @@ Projeto simples de API REST desenvolvido com Spring Boot, utilizando banco de da
 ---
 
 ## 📂 Estrutura do projeto
-
+```
 com.wesley.crudusuarios
  ┣ controller
  ┃ ┗ UsuarioController.java
@@ -28,7 +28,7 @@ com.wesley.crudusuarios
  ┣ model
  ┃ ┗ Usuario.java
  ┗ WesleyApplication.java
-
+```
 ---
 
 ## 📌 Funcionalidades
