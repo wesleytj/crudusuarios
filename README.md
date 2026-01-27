@@ -1,6 +1,7 @@
 # CRUD de Usuários - Spring Boot + H2
+`Versão: 1.1.0`
 
-Projeto simples de API REST desenvolvido com Spring Boot, utilizando banco de dados em memória H2 para operações de cadastro, listagem e persistência de usuários.
+Projeto de API REST desenvolvido com Spring Boot, utilizando banco de dados em memória H2 para operações completas de CRUD (Create, Read, Update, Delete) de usuários.
 
 ---
 
@@ -35,8 +36,10 @@ com.wesley.crudusuarios
 
 - Criar usuário (POST)  
 - Listar usuários (GET)  
+- Atualizar usuário (PUT)  
+- Deletar usuário (DELETE)  
 - ID automático  
-- Persistência em banco H2  
+- Persistência em banco H2
 
 ---
 
@@ -61,6 +64,26 @@ Body
   "idade": 32
 }
 ```
+### ➤ Atualizar usuários
+
+PUT
+
+```http://localhost:8080/usuarios/{id}```
+
+Body
+
+```json
+{
+  "nome": "Wesley Atualizado",
+  "email": "wesley@atualizado.com",
+  "idade": 33
+}
+```
+### ➤ Deletar usuários
+
+DELETE
+
+```http://localhost:8080/usuarios/{id}```
 
 ---
 
@@ -76,6 +99,8 @@ Body
 
 - Banco de dados em memória
 
+- Versionamento semântico
+
 ---
 
 ## ▶ Como executar o projeto
@@ -83,9 +108,12 @@ Body
 ```
 git clone https://github.com/wesleytj/crudusuarios.git
 cd crudusuarios
-run `CrudusuariosApplication.java`
-`http://localhost:8080/usuarios`
 ```
+#### Executar:
+`CrudusuariosApplication.java`
+
+#### Acessar:
+`http://localhost:8080/usuarios`
 
 ---
 

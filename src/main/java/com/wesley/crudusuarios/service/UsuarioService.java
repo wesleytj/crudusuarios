@@ -12,13 +12,31 @@ import com.wesley.crudusuarios.repository.UsuarioRepository;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository repository;
+    private UsuarioRepository usuarioRepository;
 
     public List<Usuario> listarTodos() {
-        return repository.findAll();
+        return usuarioRepository.findAll();
     }
 
     public Usuario salvar(Usuario usuario) {
-        return repository.save(usuario);
+        return usuarioRepository.save(usuario);
     }
+
+    public Usuario atualizarUsuario(Long id, Usuario usuarioAtualizado) {
+        return usuarioRepository.findById(id).map(usuario -> {
+            usuario.setNome(usuarioAtualizado.getNome());
+            usuario.setEmail(usuarioAtualizado.getEmail());
+            usuario.setIdade(usuarioAtualizado.getIdade());
+            return usuarioRepository.save(usuario);
+        }).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
+
+    public void deletarUsuario(Long id) {
+        if (!usuarioRepository.existsById(id)) {
+            throw new RuntimeException("Usuário não encontrado");
+        }
+
+        usuarioRepository.deleteById(id);
+    }
+
 }

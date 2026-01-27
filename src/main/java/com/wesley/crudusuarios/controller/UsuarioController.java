@@ -13,15 +13,26 @@ import com.wesley.crudusuarios.service.UsuarioService;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService service;
+    private UsuarioService usuarioService;
 
     @GetMapping
     public List<Usuario> listar() {
-        return service.listarTodos();
+        return usuarioService.listarTodos();
     }
 
     @PostMapping
     public Usuario criar(@RequestBody Usuario usuario) {
-        return service.salvar(usuario);
+        return usuarioService.salvar(usuario);
     }
+
+    @PutMapping("/{id}")
+    public Usuario atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
+        return usuarioService.atualizarUsuario(id, usuario);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletarUsuario(@PathVariable Long id) {
+        usuarioService.deletarUsuario(id);
+    }
+
 }
