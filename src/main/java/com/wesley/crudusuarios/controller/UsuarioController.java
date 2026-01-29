@@ -9,6 +9,7 @@ import com.wesley.crudusuarios.model.Usuario;
 import com.wesley.crudusuarios.service.UsuarioService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
@@ -28,6 +29,11 @@ public class UsuarioController {
     @PutMapping("/{id}")
     public Usuario atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
         return usuarioService.atualizarUsuario(id, usuario);
+    }
+
+    @GetMapping("/{id}")
+    public Usuario buscarPorId(@PathVariable Long id) {
+        return usuarioService.buscarPorId(id);
     }
 
     @DeleteMapping("/{id}")

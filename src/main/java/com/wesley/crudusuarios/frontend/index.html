@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CRUD de Usuários</h1>
+
+    <form id="formUsuario">
+        <input type="hidden" id="idUsuario">
+
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="number" id="idade" placeholder="Idade" required>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <h2>Lista de usuários</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaUsuarios">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

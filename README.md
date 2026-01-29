@@ -1,19 +1,27 @@
-# CRUD de Usuários - Spring Boot + H2
-`Versão: 1.1.0`
+# CRUD de Usuários - Spring Boot + H2 + Front-end
+`Versão: 1.2.0`
 
-Projeto de API REST desenvolvido com Spring Boot, utilizando banco de dados em memória H2 para operações completas de CRUD (Create, Read, Update, Delete) de usuários.
+Projeto de API REST com Spring Boot integrado a um front-end simples em HTML, CSS e JavaScript para cadastro e gerenciamento de usuários.
 
 ---
 
 ## 🚀 Tecnologias utilizadas
 
+### Backend
 - Java 17  
 - Spring Boot  
 - Spring Data JPA  
 - H2 Database  
 - Maven  
+
+### Frontend
+- HTML5  
+- CSS3  
+- JavaScript (Fetch API)
+
+### Ferramentas
 - VS Code  
-- Thunder Client  
+- Thunder Client
 
 ---
 
@@ -22,6 +30,10 @@ Projeto de API REST desenvolvido com Spring Boot, utilizando banco de dados em m
 com.wesley.crudusuarios
  ┣ controller
  ┃ ┗ UsuarioController.java
+ ┣ frontend
+ ┃ ┗ index.html
+ ┃ ┗ styles.css
+ ┃ ┗ script.js
  ┣ service
  ┃ ┗ UsuarioService.java
  ┣ repository
@@ -34,12 +46,20 @@ com.wesley.crudusuarios
 
 ## 📌 Funcionalidades
 
-- Criar usuário (POST)  
-- Listar usuários (GET)  
-- Atualizar usuário (PUT)  
-- Deletar usuário (DELETE)  
-- ID automático  
-- Persistência em banco H2
+### Backend (API REST)
+
+- Criar usuário  
+- Listar usuários  
+- Buscar usuário por ID  
+- Atualizar usuário  
+- Excluir usuário  
+
+### Frontend
+
+- Formulário de cadastro  
+- Listagem dinâmica  
+- Edição de usuários  
+- Exclusão de usuários 
 
 ---
 
@@ -49,6 +69,10 @@ com.wesley.crudusuarios
 
 GET
 ```http://localhost:8080/usuarios```
+
+### ➤ Buscar por ID
+GET  
+`http://localhost:8080/usuarios/{id}`
 
 ### ➤ Criar usuários
 
@@ -101,6 +125,10 @@ DELETE
 
 - Versionamento semântico
 
+- Integração Front-end + Back-end
+
+- CORS
+
 ---
 
 ## ▶ Como executar o projeto
@@ -113,8 +141,11 @@ cd crudusuarios
 `CrudusuariosApplication.java`
 
 #### Acessar:
+Back-end:
 `http://localhost:8080/usuarios`
 
+Front-end:
+`index.html`
 ---
 
 ## 📎 Observação

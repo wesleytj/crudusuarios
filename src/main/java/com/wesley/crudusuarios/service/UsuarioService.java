@@ -31,6 +31,11 @@ public class UsuarioService {
         }).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
+    public Usuario buscarPorId(Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
+
     public void deletarUsuario(Long id) {
         if (!usuarioRepository.existsById(id)) {
             throw new RuntimeException("Usuário não encontrado");
