@@ -1,6 +1,7 @@
 package com.wesley.crudusuarios.controller;
 
 import java.util.List;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +23,12 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario criar(@RequestBody Usuario usuario) {
+    public Usuario criarUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioService.salvar(usuario);
     }
 
     @PutMapping("/{id}")
-    public Usuario atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
+    public Usuario atualizarUsuario(@PathVariable Long id, @Valid @RequestBody Usuario usuario) {
         return usuarioService.atualizarUsuario(id, usuario);
     }
 

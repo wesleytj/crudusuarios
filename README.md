@@ -13,6 +13,7 @@ Projeto de API REST com Spring Boot integrado a um front-end simples em HTML, CS
 - Spring Data JPA  
 - H2 Database  
 - Maven  
+- Jakarta Validation
 
 ### Frontend
 - HTML5  
@@ -129,6 +130,10 @@ DELETE
 
 - CORS
 
+- Validação de dados
+
+- Tratamento de erros HTTP
+
 ---
 
 ## ▶ Como executar o projeto
@@ -145,7 +150,7 @@ Back-end:
 `http://localhost:8080/usuarios`
 
 Front-end:
-`index.html`
+Abrir `index.html` no navegador
 ---
 
 ## 📎 Observação
