@@ -1,7 +1,7 @@
-# CRUD de Usuários - Spring Boot + H2 + Front-end
-`Versão: 1.2.0`
+# CRUD de Usuários - Spring Boot + H2 + Front-end  
+`Versão: 1.3.0`
 
-Projeto de API REST com Spring Boot integrado a um front-end simples em HTML, CSS e JavaScript para cadastro e gerenciamento de usuários.
+Projeto de API REST com Spring Boot integrado a um front-end simples em HTML, CSS e JavaScript para cadastro, gerenciamento e paginação de usuários.
 
 ---
 
@@ -13,36 +13,36 @@ Projeto de API REST com Spring Boot integrado a um front-end simples em HTML, CS
 - Spring Data JPA  
 - H2 Database  
 - Maven  
-- Jakarta Validation
+- Jakarta Validation  
 
 ### Frontend
 - HTML5  
 - CSS3  
-- JavaScript (Fetch API)
+- JavaScript (Fetch API)  
 
 ### Ferramentas
 - VS Code  
-- Thunder Client
+- Thunder Client  
 
 ---
 
 ## 📂 Estrutura do projeto
-```
-com.wesley.crudusuarios
- ┣ controller
- ┃ ┗ UsuarioController.java
- ┣ frontend
- ┃ ┗ index.html
- ┃ ┗ styles.css
- ┃ ┗ script.js
- ┣ service
- ┃ ┗ UsuarioService.java
- ┣ repository
- ┃ ┗ UsuarioRepository.java
- ┣ model
- ┃ ┗ Usuario.java
- ┗ WesleyApplication.java
-```
+
+com.wesley.crudusuarios  
+┣ controller  
+┃ ┗ UsuarioController.java  
+┣ frontend  
+┃ ┣ index.html  
+┃ ┣ styles.css  
+┃ ┗ script.js  
+┣ service  
+┃ ┗ UsuarioService.java  
+┣ repository  
+┃ ┗ UsuarioRepository.java  
+┣ model  
+┃ ┗ Usuario.java  
+┗ CrudusuariosApplication.java  
+
 ---
 
 ## 📌 Funcionalidades
@@ -50,7 +50,7 @@ com.wesley.crudusuarios
 ### Backend (API REST)
 
 - Criar usuário  
-- Listar usuários  
+- Listar usuários com paginação  
 - Buscar usuário por ID  
 - Atualizar usuário  
 - Excluir usuário  
@@ -58,18 +58,23 @@ com.wesley.crudusuarios
 ### Frontend
 
 - Formulário de cadastro  
-- Listagem dinâmica  
+- Listagem dinâmica de usuários  
+- Paginação integrada  
 - Edição de usuários  
-- Exclusão de usuários 
+- Exclusão de usuários  
 
 ---
 
 ## 🔗 Endpoints
 
-### ➤ Listar usuários
+### ➤ Listar usuários (com paginação)
 
-GET
-```http://localhost:8080/usuarios```
+GET  
+```http://localhost:8080/usuarios?page=0&limit=10```
+
+Parâmetros:
+- `page` → número da página (inicia em 0)  
+- `limit` → quantidade de registros por página 
 
 ### ➤ Buscar por ID
 GET  
@@ -134,6 +139,8 @@ DELETE
 
 - Tratamento de erros HTTP
 
+- Paginação de dados
+
 ---
 
 ## ▶ Como executar o projeto
@@ -151,6 +158,25 @@ Back-end:
 
 Front-end:
 Abrir `index.html` no navegador
+---
+
+## 📈 Changelog
+### v1.3.0
+
+- Implementação de paginação no back-end
+
+- Integração da paginação no front-end
+
+- Melhoria na listagem de usuários
+
+### v1.2.0
+
+- CRUD completo de usuários
+
+- Integração front-end + API REST
+
+- Validações e tratamento de erros
+
 ---
 
 ## 📎 Observação

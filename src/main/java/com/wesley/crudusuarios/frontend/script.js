@@ -8,14 +8,20 @@ const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputIdade = document.getElementById("idade");
 
+let paginaAtual = 0;
+let totalPaginas = 0;
+
+
 
 // =======================
 // LISTAR USUÁRIOS
 // =======================
 
 async function carregarUsuarios() {
-    const response = await fetch(API_URL);
-    const usuarios = await response.json();
+    const response = await fetch(`${API_URL}?page=${paginaAtual}&size=5`);
+    const data = await response.json();
+    const usuarios = data.content;
+    totalPaginas = data.totalPages;
 
     tabela.innerHTML = "";
 
@@ -34,6 +40,10 @@ async function carregarUsuarios() {
 
         tabela.appendChild(linha);
     });
+
+    document.getElementById("pagina-info").innerText =
+        `Página ${data.number + 1} de ${data.totalPages}`;
+
 }
 
 
@@ -105,6 +115,25 @@ async function deletarUsuario(id) {
 
     carregarUsuarios();
 }
+
+// =======================
+// PAGINAÇÃO
+// =======================
+
+function proximaPagina() {
+    if (paginaAtual < totalPaginas - 1) {
+        paginaAtual++;
+        carregarUsuarios();
+    }
+}
+
+function paginaAnterior() {
+    if (paginaAtual > 0) {
+        paginaAtual--;
+        carregarUsuarios();
+    }
+}
+
 
 
 // =======================

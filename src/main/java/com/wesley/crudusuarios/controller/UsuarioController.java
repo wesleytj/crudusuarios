@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.wesley.crudusuarios.model.Usuario;
 import com.wesley.crudusuarios.service.UsuarioService;
@@ -18,8 +20,8 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public List<Usuario> listar() {
-        return usuarioService.listarTodos();
+    public Page<Usuario> listarPaginado(Pageable pageable) {
+        return usuarioService.listarPaginado(pageable);
     }
 
     @PostMapping
